@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.container .wrapper:first-child {
+  position: relative;
+}
+
+.container .wrapper:first-child::after {
+  border: 2px solid var(--mainColor);
+  position: absolute;
+  right: 0;
+  content: '';
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+}

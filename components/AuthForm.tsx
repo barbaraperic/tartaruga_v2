@@ -1,13 +1,14 @@
 'use client'
 import { register, signin } from '@/lib/api'
-import { useCallback, useState } from 'react'
+import { FormEvent, useCallback, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import styles from './AuthForm.module.css'
 
 const registerContent = {
   linkUrl: '/signin',
   linkText: 'Already have an account?',
-  header: 'Create a new Account',
+  header: 'Create a new account',
   subheader: 'Just a few things to get started',
   buttonText: 'Register',
 }
@@ -28,7 +29,7 @@ export default function AuthForm({ mode }: { mode: 'register' | 'signin' }) {
 
   const router = useRouter()
   const handleSubmit = useCallback(
-    async (e) => {
+    async (e: FormEvent) => {
       e.preventDefault()
 
       try {
@@ -57,35 +58,30 @@ export default function AuthForm({ mode }: { mode: 'register' | 'signin' }) {
 
   return (
     <div>
-      <div className="w-full">
-        <div className="text-center">
-          <h2 className="text-3xl mb-2">{content.header}</h2>
-          <p className="tex-lg text-black/25">{content.subheader}</p>
-        </div>
-        <form onSubmit={handleSubmit} className="py-10 w-full">
+      <div className={styles['form-wrapper']}>
+        <h2 className={styles.header}>{content.header}</h2>
+        <form onSubmit={handleSubmit}>
           {mode === 'register' && (
-            <div className="flex mb-8 justify-between">
-              <div className="pr-2">
-                <div className="text-lg mb-4 ml-2 text-black/50">
-                  First Name
-                </div>
+            <div className={styles['input-grid']}>
+              <div className="">
+                <div className={styles.label}>First Name</div>
                 <input
                   required
                   placeholder="First Name"
                   value={formState.firstName}
-                  className="border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full"
+                  className={styles.input}
                   onChange={(e) =>
                     setFormState((s) => ({ ...s, firstName: e.target.value }))
                   }
                 />
               </div>
-              <div className="pl-2">
-                <div className="text-lg mb-4 ml-2 text-black/50">Last Name</div>
+              <div className="">
+                <div className={styles.label}>Last Name</div>
                 <input
                   required
                   placeholder="Last Name"
                   value={formState.lastName}
-                  className="border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full"
+                  className={styles.input}
                   onChange={(e) =>
                     setFormState((s) => ({ ...s, lastName: e.target.value }))
                   }
@@ -93,47 +89,38 @@ export default function AuthForm({ mode }: { mode: 'register' | 'signin' }) {
               </div>
             </div>
           )}
-          <div className="mb-8">
-            <div className="text-lg mb-4 ml-2 text-black/50">Email</div>
+          <div className={styles['input-wrapper']}>
+            <div className={styles.label}>Email</div>
             <input
               required
               type="email"
-              placeholder="Email"
+              placeholder="Your email"
               value={formState.email}
-              className="border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full"
+              className={styles.input}
               onChange={(e) =>
                 setFormState((s) => ({ ...s, email: e.target.value }))
               }
             />
           </div>
-          <div className="mb-8">
-            <div className="text-lg mb-4 ml-2 text-black/50">Password</div>
+          <div className={styles['input-wrapper']}>
+            <div className={styles.label}>Password</div>
             <input
               required
               value={formState.password}
               type="password"
-              placeholder="Password"
-              className="border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full"
+              placeholder="Your password"
+              className={styles.input}
               onChange={(e) =>
                 setFormState((s) => ({ ...s, password: e.target.value }))
               }
             />
           </div>
-          <div className="flex items-center justify-between">
-            <div>
-              <span>
-                <Link
-                  href={content.linkUrl}
-                  className="text-blue-600 font-bold"
-                >
-                  {content.linkText}
-                </Link>
-              </span>
-            </div>
-            <div>
-              <button type="submit">{content.buttonText}</button>
-            </div>
-          </div>
+          <button className={styles.button} type="submit">
+            {content.buttonText}
+          </button>
+          <span className={styles.link}>
+            <Link href={content.linkUrl}>{content.linkText}</Link>
+          </span>
         </form>
       </div>
     </div>
