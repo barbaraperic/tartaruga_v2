@@ -29,9 +29,18 @@ export const signin = (user) => {
 
 export const createNewEntry = async () => {
   return fetcher({
-    url: '/api/entry/create-new',
+    url: '/api/entry/create',
     method: 'POST',
     body: {},
+    json: true,
+  })
+}
+
+export const deleteEntry = async (id: string) => {
+  return fetcher({
+    url: '/api/entry/delete',
+    method: 'DELETE',
+    body: { id },
     json: true,
   })
 }
