@@ -27,6 +27,10 @@ export const signin = (user) => {
   return fetcher({ url: '/api/signin', method: 'POST', body: user })
 }
 
+export const signout = (user) => {
+  return fetcher({ url: '/api/signout', method: 'POST', body: user })
+}
+
 export const createNewEntry = async () => {
   return fetcher({
     url: '/api/entry/create',
