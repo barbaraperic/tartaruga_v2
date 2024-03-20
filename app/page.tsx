@@ -1,9 +1,22 @@
-import Image from 'next/image'
+import Link from 'next/link'
+import styles from './page.module.css'
+import TartarugaIconComponent from '@/components/illustrations/TartarugaIcon'
 
 export default function Home() {
   return (
-    <div>
-      <h1>Home page</h1>
+    <div className={styles.container}>
+      <div className={styles['wrapper-left']}>
+        <h1>
+          Your daily <br />
+          note taker
+        </h1>
+        <Link href="/dashboard/home" className={styles.link}>
+          Get started
+        </Link>
+      </div>
+      <div className={styles['wrapper-right']}>
+        <TartarugaIconComponent />
+      </div>
     </div>
   )
 }

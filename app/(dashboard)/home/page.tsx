@@ -8,8 +8,6 @@ import { Suspense } from 'react'
 
 const getData = async () => {
   const user = await getUserFromCookie(cookies())
-
-  console.log('user', user)
 }
 
 export default async function Page() {
