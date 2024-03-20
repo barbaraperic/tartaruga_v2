@@ -10,7 +10,7 @@ export default function Home() {
           Your daily <br />
           note taker
         </h1>
-        <Link href="/dashboard/home" className={styles.link}>
+        <Link href="/home" className={`${styles.link} h5`}>
           Get started
         </Link>
       </div>
