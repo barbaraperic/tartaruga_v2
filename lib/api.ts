@@ -29,7 +29,7 @@ export const signin = (user) => {
 
 export const createNewEntry = async () => {
   return fetcher({
-    url: '/api/entry',
+    url: '/api/entry/create-new',
     method: 'POST',
     body: {},
     json: true,

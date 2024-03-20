@@ -1,0 +1,17 @@
+.loader {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textarea {
+  width: 100%;
+  height: 100%;
+  background: var(--backgroundColor);
+  outline: none;
+  border: 1px solid var(--mainColor);
+  border-radius: 4px;
+  padding: 1em;
+  letter-spacing: 0.05em;
+}

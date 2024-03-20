@@ -15,7 +15,7 @@ const NavLinks = () => {
     // },
     {
       name: 'Collection',
-      href: '/dashboard/home',
+      href: '/home',
       icon: FiBook,
     },
     // {
@@ -23,7 +23,7 @@ const NavLinks = () => {
     //   href: '/dashboard/mindmap',
     //   icon: FiClipboard,
     // },
-    { name: 'Statistics', href: '/dashboard/statistics', icon: FiActivity },
+    { name: 'Statistics', href: '/statistics', icon: FiActivity },
   ]
 
   return (
