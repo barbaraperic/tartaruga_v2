@@ -44,3 +44,16 @@ export const deleteEntry = async (id: string) => {
     json: true,
   })
 }
+
+export const updateEntry = async (
+  id: string,
+  content: string,
+  title: string
+) => {
+  return fetcher({
+    url: '/api/entry/update',
+    method: 'PATCH',
+    body: { id, content, title },
+    json: true,
+  })
+}

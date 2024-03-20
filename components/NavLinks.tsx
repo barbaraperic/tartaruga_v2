@@ -14,7 +14,7 @@ const NavLinks = () => {
     //   icon: FiHome,
     // },
     {
-      name: 'Collection',
+      name: 'Home',
       href: '/home',
       icon: FiBook,
     },
