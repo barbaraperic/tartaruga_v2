@@ -1,49 +1,57 @@
-'use client';
-
-import { register, signin } from "@/lib/api";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useCallback, useState } from "react";
+'use client'
+import { register, signin } from '@/lib/api'
+import { useCallback, useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const registerContent = {
   linkUrl: '/signin',
-  linkText: "Already have an account?",
-  header: 'Create a new account',
+  linkText: 'Already have an account?',
+  header: 'Create a new Account',
   subheader: 'Just a few things to get started',
-  buttonText: 'Register'
+  buttonText: 'Register',
 }
 
 const signinContent = {
   linkUrl: '/register',
   linkText: "Don't have an account?",
-  header: 'Welcome back!',
+  header: 'Welcome Back',
   subheader: 'Enter your credentials to access your account',
-  buttonText: 'Sign In'
+  buttonText: 'Sign In',
 }
 
-const initial = {email: '', password: '', firstName: '', lastName: ''}
+const initial = { email: '', password: '', firstName: '', lastName: '' }
 
-const AuthForm = ({mode}) => {
-  const [formState, setFormState] = useState({...initial})
+export default function AuthForm({ mode }: { mode: 'register' | 'signin' }) {
+  const [formState, setFormState] = useState({ ...initial })
+  const [error, setError] = useState('')
+
   const router = useRouter()
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault()
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+      try {
+        if (mode === 'register') {
+          await register(formState)
+        } else {
+          await signin(formState)
+        }
 
-    try {
-      if (mode === 'register') {
-        await register(formState)
-        console.log('yolo')
-      } else {
-        await signin(formState)
+        router.replace('/home')
+      } catch (e) {
+        setError(`Could not ${mode}`)
+      } finally {
+        setFormState({ ...initial })
       }
-  
-      router.push('/home')
-      setFormState(initial)
-    } catch(e) {
-      console.error(e)
-    }
-  }
+    },
+    [
+      formState.email,
+      formState.password,
+      formState.firstName,
+      formState.lastName,
+    ]
+  )
 
   const content = mode === 'register' ? registerContent : signinContent
 
@@ -55,7 +63,7 @@ const AuthForm = ({mode}) => {
           <p className="tex-lg text-black/25">{content.subheader}</p>
         </div>
         <form onSubmit={handleSubmit} className="py-10 w-full">
-          {mode === "register" && (
+          {mode === 'register' && (
             <div className="flex mb-8 justify-between">
               <div className="pr-2">
                 <div className="text-lg mb-4 ml-2 text-black/50">
@@ -123,9 +131,7 @@ const AuthForm = ({mode}) => {
               </span>
             </div>
             <div>
-              <button type="submit" >
-                {content.buttonText}
-              </button>
+              <button type="submit">{content.buttonText}</button>
             </div>
           </div>
         </form>
@@ -133,6 +139,3 @@ const AuthForm = ({mode}) => {
     </div>
   )
 }
-
-
-export default AuthForm;
