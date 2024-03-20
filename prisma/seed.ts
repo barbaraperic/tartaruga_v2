@@ -10,15 +10,9 @@ async function main() {
       firstName: "User",
       lastName: "Person",
       password: await hashPassword("password"),
-      projects: {
-        create: new Array(5).fill(1).map((_, i) => ({
-          name: `Project ${i}`,
-          due: new Date(2022, 11, 25),
-        })),
-      },
     },
     include: {
-      entries: true,
+      entry: true,
     },
   });
 
