@@ -1,0 +1,21 @@
+.link {
+  display: flex;
+  height: 48px;
+  width: 100%;
+  align-items: center;
+}
+
+.link :hover > * {
+  color: var(--accentColor);
+  stroke: var(--accentColor);
+}
+
+.link .icon {
+  min-width: 24px;
+  min-height: 24px;
+  margin-right: 12px;
+}
+
+.link p {
+  flex: 1;
+}

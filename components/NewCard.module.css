@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  width: 240px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1.5px solid var(--accentColor);
+  color: var(--accentColor);
+  transition: all;
+  transition-duration: 0.25s;
+}
+
+.card p {
+  text-align: center;
+}
+
+.card svg {
+  width: 24px;
+  height: 24px;
+}
+
+.card:hover {
+  background-color: var(--accentColor);
+  color: var(--backgroundColor);
+  border-color: var(--backgroundColor);
+}
