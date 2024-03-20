@@ -23,7 +23,7 @@ const NavLinks = () => {
     //   href: '/dashboard/mindmap',
     //   icon: FiClipboard,
     // },
-    { name: 'Statistics', href: '/statistics', icon: FiActivity },
+    // { name: 'Statistics', href: '/statistics', icon: FiActivity },
   ]
 
   return (
