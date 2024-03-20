@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { Suspense } from 'react'
 import styles from './page.home.module.css'
 import NewEntryCard from '@/components/NewEntryCard'
+import EntryCard from '@/components/EntryCard'
 
 const getData = async () => {
   const user = await getUserFromCookie(cookies())

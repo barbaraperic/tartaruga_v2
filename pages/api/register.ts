@@ -7,7 +7,6 @@ export default async function register(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log('register')
   if (req.method === 'POST') {
     const user = await db.user.create({
       data: {
@@ -19,8 +18,6 @@ export default async function register(
     })
 
     const jwt = await createJWT(user)
-
-    console.log('create JWT', jwt)
 
     res.setHeader(
       'Set-Cookie',

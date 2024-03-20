@@ -31,6 +31,7 @@ model Entry {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   content   String @db.Text
+  title   String @db.Text
   userId    String
   user      User     @relation(fields: [userId], references: [id])
   @@unique([userId, id])

@@ -8,7 +8,6 @@ export const fetcher = async ({ url, method, body, json = true }) => {
     },
   })
 
-  console.log('res', res)
   if (!res.ok) {
     // handle your errors
     throw new Error('API error')
@@ -16,24 +15,23 @@ export const fetcher = async ({ url, method, body, json = true }) => {
 
   if (json) {
     const data = await res.json()
-    console.log('data', data)
     return data.data
   }
 }
 
 export const register = (user) => {
-  return fetcher({ url: '/api/register', method: 'post', body: user })
+  return fetcher({ url: '/api/register', method: 'POST', body: user })
 }
 
 export const signin = (user) => {
-  return fetcher({ url: '/api/signin', method: 'post', body: user })
+  return fetcher({ url: '/api/signin', method: 'POST', body: user })
 }
 
-export const createNewProject = async (name: string) => {
+export const createNewEntry = async () => {
   return fetcher({
     url: '/api/entry',
     method: 'POST',
-    body: { name },
+    body: {},
     json: true,
   })
 }
