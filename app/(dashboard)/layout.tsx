@@ -13,6 +13,8 @@ export default async function DashboardRootLayout({
         <NavLinks />
       </aside>
       <header className={styles.header}>
+        <p>Welcome </p>
+
         {/* {session && (
           <>
             <p>Welcome {session?.user?.name}</p>
@@ -28,9 +30,10 @@ export default async function DashboardRootLayout({
               className={styles.avatar}
             />
             <ul className={styles.dropdown}>
-              {/* <li>
-                <SignOutButton />
-              </li> */}
+              <li>
+                Sign out
+                {/* <SignOutButton /> */}
+              </li>
             </ul>
           </li>
         </ul>

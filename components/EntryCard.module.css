@@ -1,0 +1,31 @@
+.card {
+  border: 1.5px solid var(--mainColor);
+  color: var(--mainColor);
+  background: transparent;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 0.25s;
+  width: 240px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content:hover {
+  background-color: var(--mainColor);
+  color: var(--backgroundColor);
+  border-color: var(--backgroundColor);
+}
+
+.card-content .title {
+  text-align: left;
+  font-weight: 500;
+}
+
+.card-content .text {
+  text-align: left;
+}

@@ -30,9 +30,9 @@ export default async function Page() {
       <NewEntryCard />
       <p>All notes</p>
       <div className={styles['cards-wrapper']}>
-        {/* {allEntries?.map((entry) => (
+        {allEntries?.map((entry) => (
           <EntryCard key={entry.id} data={entry} />
-        ))} */}
+        ))}
       </div>
     </div>
   )
