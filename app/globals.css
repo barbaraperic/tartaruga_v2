@@ -27,14 +27,13 @@
   --base: 1rem;
   --scale: 1.25;
   --h5: calc(var(--base) * var(--scale));
-  --h4: calc(var((--h5) * var(--scale)));
-  --h3: calc(var((--h4) * var(--scale)));
-  --h2: calc(var((--h3) * var(--scale)));
-  --h1: calc(var((--h2) * var(--scale)));
+  --h4: calc(var(--h5) * var(--scale));
+  --h3: calc(var(--h4) * var(--scale));
+  --h2: calc(var(--h3) * var(--scale));
+  --h1: calc(var(--h2) * var(--scale));
 }
 
-h1,
-.h1 {
+h1 {
   font-family: var(--font-covered-by-your-grace);
   font-size: var(--h1);
 }
