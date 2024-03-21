@@ -11,7 +11,7 @@ export default async function DashboardRootLayout({
 }) {
   const user = getUserFromCookie(cookies())
   return (
-    <>
+    <div>
       <Header />
       <div className={styles.wrapper}>
         <aside className={styles.sidebar}>
@@ -19,6 +19,6 @@ export default async function DashboardRootLayout({
         </aside>
         <main className={styles.main}>{children}</main>
       </div>
-    </>
+    </div>
   )
 }

@@ -25,14 +25,14 @@ const Editor = ({ data }: { data: any }) => {
   })
 
   return (
-    <>
+    <div>
       <div className={styles.loader}>{loading && <Loader />}</div>
       <textarea
         className={styles.textarea}
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-    </>
+    </div>
   )
 }
 

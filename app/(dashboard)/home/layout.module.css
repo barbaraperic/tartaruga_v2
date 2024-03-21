@@ -10,7 +10,7 @@
   height: 100vh;
   width: 100vw;
   padding: 32px;
-  background-image: url('../axiom-pattern.png');
+  background-image: url('../../axiom-pattern.png');
 }
 
 .sidebar {

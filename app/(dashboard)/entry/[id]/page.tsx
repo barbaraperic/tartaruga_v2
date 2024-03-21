@@ -26,7 +26,7 @@ export default async function EntryPage({ params }) {
   const date = new Date(entry?.createdAt).toDateString()
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper}`}>
       <div className={styles.top}>
         <p>{date}</p>
         <DeleteEntryButton id={params.id} />

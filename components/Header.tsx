@@ -1,14 +1,18 @@
 'use client'
 
+import useAnimatedRouter from '@/hooks/useAnimatedRouter'
 import styles from './Header.module.css'
 import Image from 'next/image'
 
 export default function Header() {
   function handleSignout() {}
 
+  const { viewTransitionsStatus } = useAnimatedRouter()
+
   return (
     <header className={styles.header}>
-      <h4>Tartaruga </h4>
+      <h1 className="h3">Tartaruga </h1>
+      <span>{viewTransitionsStatus()}</span>
 
       {/* {session && (
           <>
