@@ -8,14 +8,14 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <p>Welcome </p>
+      <h4>Tartaruga </h4>
 
       {/* {session && (
           <>
             <p>Welcome {session?.user?.name}</p>
           </>
         )} */}
-      <ul role="navigation" className={styles['avatar-navigation']}>
+      {/* <ul role="navigation" className={styles['avatar-navigation']}>
         <li className={styles['avatar-dropdown']}>
           <Image
             width={36}
@@ -28,7 +28,7 @@ export default function Header() {
             <li onClick={handleSignout}>Sign out</li>
           </ul>
         </li>
-      </ul>
+      </ul> */}
     </header>
   )
 }
