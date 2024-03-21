@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation'
 import styles from './Editor.module.css'
 import Loader from './Loader'
 import { updateEntry } from '@/lib/api'
+import { FiArrowLeft } from 'react-icons/fi'
+import AnimatedLink from './AnimatedLink'
 
 const Editor = ({ data }: { data: any }) => {
   const [value, setValue] = useState(data.content)

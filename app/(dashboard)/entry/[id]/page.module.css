@@ -4,8 +4,3 @@
   scroll-behavior: auto;
   overflow-y: scroll;
 }
-
-.wrapper .top {
-  display: flex;
-  justify-content: space-between;
-}

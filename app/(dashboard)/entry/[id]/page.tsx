@@ -6,6 +6,7 @@ import { db } from '@/lib/db'
 import { getUserFromCookie } from '@/lib/auth'
 import { cookies } from 'next/headers'
 import DeleteEntryButton from '@/components/DeleteEntryButton'
+import EditorHeader from '@/components/EditorHeader'
 
 export const getEntry = async (id: string) => {
   const user = await getUserFromCookie(cookies())
@@ -27,10 +28,7 @@ export default async function EntryPage({ params }) {
 
   return (
     <div className={`${styles.wrapper}`}>
-      <div className={styles.top}>
-        <p>{date}</p>
-        <DeleteEntryButton id={params.id} />
-      </div>
+      <EditorHeader id={params.id} date={date} />
       <Editor data={entry} />
     </div>
   )
