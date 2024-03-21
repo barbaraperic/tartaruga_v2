@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1em;
-  width: 240px;
+  width: 80%;
   border-radius: 4px;
   cursor: pointer;
   border: 1.5px solid var(--accentColor);

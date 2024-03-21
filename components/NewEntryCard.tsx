@@ -15,7 +15,7 @@ const NewEntryCard = () => {
 
   return (
     <div className={styles.card} onClick={handleOnClick}>
-      <p>New entry</p>
+      <p>Start typing...</p>
       <FiFileText />
     </div>
   )

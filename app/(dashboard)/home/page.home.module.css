@@ -1,18 +1,19 @@
 .page-wrapper {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  padding: 2rem;
+  gap: 2rem;
   height: 100%;
 }
 
-.page-wrapper p {
-  margin-top: 24px;
-  margin-bottom: 32px;
+.page-wrapper > div:first-of-type {
+  margin: 0 auto;
 }
 
 .cards-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  row-gap: 12px;
-  column-gap: 12px;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+  margin: 0 auto;
+  justify-content: center;
 }

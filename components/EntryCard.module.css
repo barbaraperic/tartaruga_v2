@@ -4,8 +4,6 @@
   background: transparent;
   border-radius: 4px;
   cursor: pointer;
-  transition: all;
-  transition-duration: 0.25s;
   width: 240px;
 }
 
@@ -13,12 +11,17 @@
   display: flex;
   flex-direction: column;
   padding: 0.5em 1em;
+  height: 100%;
+  transition: all;
+  transition-duration: 0.25s;
 }
 
 .card-content:hover {
   background-color: var(--mainColor);
   color: var(--backgroundColor);
   border-color: var(--backgroundColor);
+  transition: all;
+  transition-duration: 0.25s;
 }
 
 .card-content .title {
