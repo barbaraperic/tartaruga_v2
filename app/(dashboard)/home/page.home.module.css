@@ -11,6 +11,7 @@
 }
 
 .cards-wrapper {
+  overflow: auto;
   display: flex;
   flex-flow: row wrap;
   gap: 2rem;

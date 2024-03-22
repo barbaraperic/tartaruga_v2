@@ -15,7 +15,7 @@
   padding: 0.5em 1em;
   height: 100%;
   transition: all;
-  transition-duration: 0.25s;
+  transition-duration: 0.15s;
 }
 
 .card-content:hover {
@@ -23,7 +23,7 @@
   color: var(--backgroundColor);
   border-color: var(--backgroundColor);
   transition: all;
-  transition-duration: 0.25s;
+  transition-duration: 0.15s;
 }
 
 .card-content .title {
