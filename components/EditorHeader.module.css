@@ -1,0 +1,16 @@
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform 0.1s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  transition: transform 0.1s;
+}

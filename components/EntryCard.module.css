@@ -1,10 +1,11 @@
 .card {
   border: 1.5px solid var(--mainColor);
   color: var(--mainColor);
-  background: transparent;
+  background: var(--backgroundColor);
   border-radius: 4px;
   cursor: pointer;
   width: 240px;
+  height: 10rem;
   box-shadow: 0 0 1.2em rgba(0, 0, 0, 0.2);
 }
 
@@ -14,7 +15,7 @@
   padding: 0.5em 1em;
   height: 100%;
   transition: all;
-  transition-duration: 0.25s;
+  transition-duration: 0.15s;
 }
 
 .card-content:hover {
@@ -22,7 +23,7 @@
   color: var(--backgroundColor);
   border-color: var(--backgroundColor);
   transition: all;
-  transition-duration: 0.25s;
+  transition-duration: 0.15s;
 }
 
 .card-content .title {
