@@ -1,20 +1,35 @@
 'use client'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { inView } from 'framer-motion'
 
 const variants = {
-  hidden: { opacity: 0, x: 0, y: 200 },
-  enter: { opacity: 1, x: 0, y: 0 },
+  hidden: {
+    scaleX: 0,
+    transition: {
+      ease: 'easeOut',
+      duration: 3,
+    },
+  },
+  enter: {
+    scaleX: 1,
+  },
 }
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
-    <motion.main
-      variants={variants}
-      initial="hidden"
-      animate="enter"
-      transition={{ type: 'linear' }}
-    >
-      {children}
-    </motion.main>
+    <div>
+      <motion.div
+        layout
+        initial="hidden"
+        animate="enter"
+        variants={variants}
+        transition={{
+          layout: { duration: 0.3, type: 'spring' },
+        }}
+      >
+        {children}
+      </motion.div>
+      <AnimatePresence initial={false} mode="wait"></AnimatePresence>
+    </div>
   )
 }
