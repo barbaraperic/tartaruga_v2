@@ -1,11 +1,11 @@
 .card {
   border: 1.5px solid var(--mainColor);
   color: var(--mainColor);
-  background: transparent;
+  background: var(--backgroundColor);
   border-radius: 4px;
   cursor: pointer;
   width: 240px;
-  height: 300px;
+  height: 10rem;
   box-shadow: 0 0 1.2em rgba(0, 0, 0, 0.2);
 }
 

@@ -9,7 +9,6 @@ const NewEntryCard = () => {
 
   async function handleOnClick() {
     const entry = await createNewEntry()
-    console.log('ENTRY', entry)
     router.push(`/entry/${entry.id}`)
   }
 
