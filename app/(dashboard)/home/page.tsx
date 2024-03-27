@@ -8,6 +8,7 @@ import { Suspense } from 'react'
 import styles from './page.home.module.css'
 import NewEntryCard from '@/components/NewEntryCard'
 import EntryCard from '@/components/EntryCard'
+import EntryCardWrapper from '@/components/EntryCardWrapper'
 
 const getData = async () => {
   const user = await getUserFromCookie(cookies())
@@ -23,17 +24,21 @@ const getData = async () => {
   return allEntries
 }
 
-export default async function Page() {
+export default async function Page({
+  params,
+  searchParams,
+}: {
+  params: { slug: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
+}) {
   const allEntries = await getData()
+
+  const isEditMode = searchParams?.id ? true : false
 
   return (
     <div className={styles['page-wrapper']}>
       <NewEntryCard />
-      <div className={styles['cards-wrapper']}>
-        {allEntries?.map((entry) => (
-          <EntryCard key={entry.id} data={entry} />
-        ))}
-      </div>
+      <EntryCardWrapper cards={allEntries} />
     </div>
   )
 }

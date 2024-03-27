@@ -35,6 +35,7 @@ export default async function EntryPage({ params }) {
   const { entry, allEntries } = await getEntry(params.id)
 
   const date = new Date(entry?.createdAt).toDateString()
+  const restOfTheEntries = allEntries.filter((e) => e.id !== entry?.id)
 
   return (
     <div className={`${styles.wrapper}`}>
@@ -43,7 +44,8 @@ export default async function EntryPage({ params }) {
         <Editor data={entry} />
       </div>
       <div className={styles.sidebar}>
-        {allEntries?.map((entry) => (
+        <EntryCard key={entry.id} data={entry} />
+        {restOfTheEntries?.map((entry) => (
           <EntryCard key={entry.id} data={entry} />
         ))}
       </div>

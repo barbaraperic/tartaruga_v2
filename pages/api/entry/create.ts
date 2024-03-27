@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   const data = await db.entry.create({
     data: {
       title: 'Title',
-      content: 'Content',
+      content: 'Start typing...',
       userId: user.id,
     },
   })

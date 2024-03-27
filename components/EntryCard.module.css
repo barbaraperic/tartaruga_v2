@@ -18,13 +18,13 @@
   transition-duration: 0.15s;
 }
 
-.card-content:hover {
+/* .card-content:hover {
   background-color: var(--mainColor);
   color: var(--backgroundColor);
   border-color: var(--backgroundColor);
   transition: all;
   transition-duration: 0.15s;
-}
+} */
 
 .card-content .title {
   text-align: left;
