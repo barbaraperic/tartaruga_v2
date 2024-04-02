@@ -11,9 +11,9 @@ export default async function DashboardRootLayout({
 }) {
   const user = getUserFromCookie(cookies())
   return (
-    <div>
+    <>
       <Header />
-      <div>{children}</div>
-    </div>
+      <main className={styles.main}>{children}</main>
+    </>
   )
 }

@@ -16,13 +16,13 @@ export default function EntryCard({
 }) {
   return (
     <Link
+      className={styles.card}
       href={{
         query: { id },
       }}
+      onClick={() => onClick(id)}
     >
-      <div onClick={() => onClick(id)} className={styles.card}>
-        <div>{children}</div>
-      </div>
+      <div>{children}</div>
     </Link>
   )
 }

@@ -15,8 +15,6 @@ export default function EntryCardWrapper({ cards }: { cards: any }) {
     setSelectedCard(id)
   }
 
-  console.log('selected', selectedCard)
-
   const filterCards = cards.filter((card) => card.id !== selectedCard)
 
   const selectedEntryCard = cards.find((card) => card.id === selectedCard)
@@ -38,21 +36,5 @@ export default function EntryCardWrapper({ cards }: { cards: any }) {
         ))}
       </div>
     </div>
-    // <div id="wrapper">
-    //   <div>
-    //     {selectedCard !== null && (
-    //       <EntryCard id={cards.id} onClick={handleCardClick}>
-    //         {cards.content}
-    //       </EntryCard>
-    //     )}
-    //   </div>
-    //   <div>
-    //     {selectedCard === null && (
-    //       <EntryCard id={cards.id} onClick={handleCardClick}>
-    //         {cards.content}
-    //       </EntryCard>
-    //     )}
-    //   </div>
-    // </div>
   )
 }
